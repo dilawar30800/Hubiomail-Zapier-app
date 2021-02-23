@@ -1,0 +1,46 @@
+module.exports = {
+  operation: {
+    perform: {
+      url: 'https://app.hubiomail.net/api/v1/lists',
+      method: 'GET',
+      params: { api_token: '{{bundle.authData.api_token}}' },
+      headers: {
+        Accept: 'application/json',
+        X_API: '{{bundle.authData.api_token}}',
+      },
+      body: {},
+      removeMissingValuesFrom: {},
+    },
+    sample: {
+      id: 29,
+      uid: '5eb7bce31aa74',
+      name: 'test',
+      default_subject: '',
+      from_email: 'tural@hubio.io',
+      from_name: 'Test List',
+      status: null,
+      created_at: '2020-05-10 08:35:47',
+      updated_at: '2020-06-20 08:55:49',
+    },
+    outputFields: [
+      { key: 'id', type: 'integer' },
+      { key: 'uid' },
+      { key: 'name' },
+      { key: 'default_subject' },
+      { key: 'from_email' },
+      { key: 'from_name' },
+      { key: 'status' },
+      { key: 'created_at' },
+      { key: 'updated_at' },
+    ],
+    canPaginate: true,
+  },
+  key: 'new_list',
+  noun: 'list',
+  display: {
+    label: 'New List',
+    description: 'Triggers when new list is created.',
+    hidden: false,
+    important: true,
+  },
+};
